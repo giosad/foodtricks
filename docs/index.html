@@ -3,11 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Foodtricks</title>
-    <style>
-      @viewport{
-        zoom: 1.0;
-        width: device-width;
-      }
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <style>
       #foodlinks a{
         font-size: 2rem;
         text-decoration: none;
@@ -17,23 +16,37 @@
     </style>
 	</head>
 	<body>
-    <div id="foodlinks">
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Sima">Sima</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Aroma">Aroma</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Japanika">Japanika</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Salsalite">Salsalite</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Salatia">Salatia</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Poyo Loko">Poyo Loko</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Train Junction">Train Junction</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Josef">Josef</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] King George">King George</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Burger's Bar">Burger's Bar</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Moses">Moses</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] MyPizza">MyPizza</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Teresa">Teresa</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Alma">Alma</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Chooka">Chooka</a><br/>
-      <a href="mailto:foodtricks@lightricks.com?subject=[Foodtricks] Japan Japan">Japan Japan</a><br/>
-    </div>
+		<div class="list-group" id="foodlinks"></div>
+		<script>
+		  var foodSuppliers = [
+				"Sima",
+				"Aroma",
+				"Japanika",
+				"Salsalite",
+				"Salatia",
+				"Poyo Loko",
+				"Train Junction",
+				"Josef",
+				"King George",
+				"Burger's Bar",
+				"Moses",
+				"MyPizza",
+				"Teresa",
+				"Alma",
+				"Chooka",
+				"Japan Japan"
+			];
+			let root = document.getElementById("foodlinks");
+			for (let v of foodSuppliers) {
+				let link = document.createElement("a");
+				let linkText = document.createTextNode(v);
+				let ref = "mailto:foodtricks@lightricks.com?subject=" +
+				    encodeURIComponent("[Foodtricks] " + v);
+				link.setAttribute("href", ref);
+				link.appendChild(linkText);
+				link.classList.add("list-group-item");
+				root.appendChild(link);
+			}
+		</script>
   </body>
 </html>
