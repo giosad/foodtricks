@@ -42,8 +42,8 @@
 				let linkText = document.createTextNode(v);
 				let subject = encodeURIComponent("[Foodtricks] " + v);
 				let body = encodeURIComponent("Reported via https://giosad.github.io/foodtricks");
-				let ref = "mailto:foodtricks@lightricks.com?subject=" + subject +
-						"&body=" + body;
+				let ref = "mailto:foodtricks" + "@" +
+						"lightricks.com?subject=" + subject + "&body=" + body;
 				link.setAttribute("href", ref);
 				link.appendChild(linkText);
 				link.classList.add("list-group-item");
