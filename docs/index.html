@@ -16,7 +16,7 @@
     </style>
 	</head>
 	<body>
-		<div class="list-group" id="foodlinks"></div>
+		<div class="list-group" id="foodlinks" />
 		<script>
 		  var foodSuppliers = [
 				"Sima",
@@ -40,8 +40,10 @@
 			for (let v of foodSuppliers) {
 				let link = document.createElement("a");
 				let linkText = document.createTextNode(v);
-				let ref = "mailto:foodtricks@lightricks.com?subject=" +
-				    encodeURIComponent("[Foodtricks] " + v);
+				let subject = encodeURIComponent("[Foodtricks] " + v);
+				let body = encodeURIComponent("Reported via https://giosad.github.io/foodtricks");
+				let ref = "mailto:foodtricks@lightricks.com?subject=" + subject +
+						"&body=" + body;
 				link.setAttribute("href", ref);
 				link.appendChild(linkText);
 				link.classList.add("list-group-item");
